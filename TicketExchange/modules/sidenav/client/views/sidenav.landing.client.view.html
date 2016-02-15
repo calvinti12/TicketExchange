@@ -1,0 +1,56 @@
+﻿<div layout="column" ng-controller="SidenavCtrl" class="max-height">
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2 max-height" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+        <md-toolbar class="md-tall md-hue-2">
+            <span flex></span>
+            <div layout="column" class="md-toolbar-tools-bottom inset" ng-show="authentication.user">
+                <user-avatar></user-avatar>
+                <span></span>
+                <div>
+                    <div style="float:left">
+                        <div>{{authentication.user.displayName}}</div>
+                        <div>{{authentication.user.email}}</div>
+                    </div>
+                    <div style="float:right">
+                        <!--<a href="/api/auth/signout" target="_self">-->
+                            <ng-md-icon icon="input" ng-click="signOut()" class="sign-out"></ng-md-icon>
+                        <!--</a>-->
+                    </div>
+                </div>
+            </div>
+            <div layout="column" class="md-toolbar-tools-bottom inset" ng-hide="authentication.user">
+                <user-avatar></user-avatar>
+                <span></span>
+                <!--<a data-ui-sref="home.signup">Sign In Now!!!</a>-->
+                <md-button data-ui-sref="home.signup" class="md-primary">Login</md-button>
+            </div>
+        </md-toolbar>
+        <md-list>
+            <md-list-item ng-repeat="item in menu">
+                <md-button data-ui-sref="{{item.link}}">
+                    <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                        <div class="inset">
+                            <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
+                        </div>
+                        <div class="inset">
+                            {{item.title}}
+                        </div>
+                    </md-item-content>
+                </md-button>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-subheader>Admin</md-subheader>
+            <md-list-item ng-repeat="item in admin">
+                <md-button>
+                    <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                        <div class="inset">
+                            <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
+                        </div>
+                        <div class="inset">
+                            {{item.title}}
+                        </div>
+                    </md-item-content>
+                </md-button>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+</div>

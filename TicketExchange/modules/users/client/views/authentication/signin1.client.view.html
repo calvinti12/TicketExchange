@@ -1,0 +1,46 @@
+﻿<div style="max-width:864px; margin:16px; box-sizing: border-box" ng-controller="AuthenticationController">
+    <div flex layout="column">
+        <section class="md-whiteframe-z1" style="position:relative">
+            <md-toolbar class="demo-toolbar md-primary">
+                <div class="md-toolbar-tools">
+                    <h3 class="ng-binding">Sign In</h3>
+                    <span flex="" class="flex"></span>
+                </div>
+            </md-toolbar>
+            <div style="position:relative;overflow:hidden; display:flex">
+                <md-content flex layout-padding class="autoScroll">
+                    <form name="userForm" ng-submit="signin(userForm.$valid)" autocomplete="off">
+                        <div layout-gt-xs="row">
+                            <md-input-container class="md-block" flex-gt-sm show-errors>
+                                <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>
+                                <label>Email</label>
+                                <input type="text" id="email" name="email" class="form-control" ng-model="credentials.email" placeholder="Email">
+                                <div ng-messages="userForm.username.$error" role="alert">
+                                    <p class="help-block error-text" ng-message="required">Username is required.</p>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <div layout-gt-xs="row">
+                            <md-input-container class="md-block" flex-gt-sm show-errors>
+                                <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>
+                                <label>Password</label>
+                                <input type="password" id="password" name="password" class="form-control" ng-model="credentials.password" placeholder="Password" required>
+                                <div ng-messages="userForm.password.$error" role="alert">
+                                    <p class="help-block error-text" ng-message="required">Password is required.</p>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <div layout-gt-xs="row">
+                            <md-button type="submit"class="md-raised md-primary">Sign In</md-button>
+                        </div>
+                        <div layout-gt-xs="row">
+                            <md-button style="font-size:xx-small" md-no-ink class="md-primary">Forgot Password</md-button>
+                        </div>
+                    </form>
+                </md-content>
+            </div>
+        </section>
+    </div>
+</div>
+
+

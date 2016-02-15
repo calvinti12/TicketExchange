@@ -1,0 +1,15 @@
+﻿<div layout="row" class="max-height">
+    <ng-include src="'modules/sidenav/client/views/sidenav.landing.client.view.html'" class="max-height"></ng-include>   
+
+    <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2" ng-controller="LandingController as ul">
+        <md-toolbar layout="row" class="md-whiteframe-z1">
+            <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
+                <md-icon md-svg-icon="menu"></md-icon>
+            </md-button>
+            <h1>Ticket Exchange</h1>
+        </md-toolbar>
+        <md-content md-scroll-y layout="column" flex>
+            <div ui-view layout-padding flex="noshrink"></div>
+        </md-content>
+    </div>
+</div>
