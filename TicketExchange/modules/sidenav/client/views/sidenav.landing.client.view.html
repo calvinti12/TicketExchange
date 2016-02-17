@@ -25,19 +25,19 @@
             </div>
         </md-toolbar>
         <md-list>
-            <md-list-item ng-repeat="item in menu">
-                <md-button data-ui-sref="{{item.link}}">
+            <md-list-item ng-repeat="item in menu.items" ng-if="item.shouldRender(authentication.user);">
+                <md-button data-ui-sref="{{item.state}}">
                     <md-item-content md-ink-ripple layout="row" layout-align="start center">
                         <div class="inset">
                             <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
                         </div>
-                        <div class="inset">
+                        <div class="inset" ng-bind="item.title">
                             {{item.title}}
                         </div>
                     </md-item-content>
                 </md-button>
             </md-list-item>
-            <md-divider></md-divider>
+            <!--<md-divider></md-divider>
             <md-subheader>Admin</md-subheader>
             <md-list-item ng-repeat="item in admin">
                 <md-button>
@@ -50,7 +50,7 @@
                         </div>
                     </md-item-content>
                 </md-button>
-            </md-list-item>
+            </md-list-item>-->
         </md-list>
     </md-sidenav>
 </div>
