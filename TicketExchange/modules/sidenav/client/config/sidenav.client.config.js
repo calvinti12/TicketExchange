@@ -12,25 +12,25 @@
             Menus.addMenuAdminItem('sidenav', {
                 title: 'Help',
                 state: 'home.help',
-                icon: 'dashboard',
+                icon: 'transform',
                 roles: ['*']
             });
             Menus.addMenuAdminItem('sidenav', {
                 title: 'Settings',
                 state: 'home.settings',
-                icon: 'dashboard',
+                icon: 'directions_walk',
                 roles: ['*']
             });
             
             //Add the admin panel items
             Menus.addMenuAdminItem('sidenav', {
                 title: 'Admin Panel 1',
-                icon: 'dashboard',
+                icon: 'flash_on',
                 roles: ['admin']
             });
             Menus.addMenuAdminItem('sidenav', {
                 title: 'Admin Panel 2',
-                icon: 'dashboard',
+                icon: 'nature',
                 roles: ['admin']
             });
         }
