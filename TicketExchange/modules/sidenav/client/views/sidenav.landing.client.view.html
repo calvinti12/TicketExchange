@@ -25,7 +25,7 @@
             </div>
         </md-toolbar>
         <md-list>
-            <md-list-item ng-repeat="item in menu.items" ng-if="item.shouldRender(authentication.user);">
+            <md-list-item ng-repeat="item in menu.items">
                 <md-button data-ui-sref="{{item.state}}">
                     <md-item-content md-ink-ripple layout="row" layout-align="start center">
                         <div class="inset">
@@ -37,20 +37,22 @@
                     </md-item-content>
                 </md-button>
             </md-list-item>
-            <!--<md-divider></md-divider>
-            <md-subheader>Admin</md-subheader>
-            <md-list-item ng-repeat="item in admin">
-                <md-button>
-                    <md-item-content md-ink-ripple layout="row" layout-align="start center">
-                        <div class="inset">
-                            <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
-                        </div>
-                        <div class="inset">
-                            {{item.title}}
-                        </div>
-                    </md-item-content>
-                </md-button>
-            </md-list-item>-->
+            <div ng-if="menu.shouldRender(authentication.user,true);">
+                <md-divider></md-divider>
+                <md-subheader>Admin</md-subheader>
+                <md-list-item ng-repeat="item in menu.adminItems">
+                    <md-button>
+                        <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                            <div class="inset">
+                                <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
+                            </div>
+                            <div class="inset">
+                                {{item.title}}
+                            </div>
+                        </md-item-content>
+                    </md-button>
+                </md-list-item>
+            </div>
         </md-list>
     </md-sidenav>
 </div>
