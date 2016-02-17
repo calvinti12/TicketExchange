@@ -33,11 +33,11 @@
         })
         .state('home.signup', {
             url: 'signup',
-            templateUrl: 'modules/users/client/views/authentication/signup1.client.view.html'
+            templateUrl: 'modules/users/client/views/authentication/signup.client.view.html'
         })
         .state('home.signin', {
             url: 'signin',
-            templateUrl: 'modules/users/client/views/authentication/signin1.client.view.html'
+            templateUrl: 'modules/users/client/views/authentication/signin.client.view.html'
         });
     }
     
