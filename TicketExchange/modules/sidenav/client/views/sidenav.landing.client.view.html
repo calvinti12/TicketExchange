@@ -37,7 +37,7 @@
                     </md-item-content>
                 </md-button>
             </md-list-item>
-            <div ng-if="menu.shouldRender(authentication.user,true);">
+            <div ng-if="menu.shouldRender(authentication.user,'true');">
                 <md-divider></md-divider>
                 <md-subheader>Admin</md-subheader>
                 <md-list-item ng-repeat="item in menu.adminItems">

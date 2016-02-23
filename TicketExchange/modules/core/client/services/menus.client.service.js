@@ -13,27 +13,27 @@ angular.module('core').service('Menus', [
         this.menus = {};
         
         // A private function for rendering decision
-        var shouldRender = function (user) {
-            if (!!~this.roles.indexOf('*')) {
-                return true;
-            } else {
-                if (!user) {
-                    return false;
-                }
-                for (var userRoleIndex in user.roles) {
-                    for (var roleIndex in this.roles) {
-                        if (this.roles[roleIndex] === user.roles[userRoleIndex]) {
-                            return true;
-                        }
-                    }
-                }
-            }
+        //var shouldRender = function (user) {
+        //    if (!!~this.roles.indexOf('*')) {
+        //        return true;
+        //    } else {
+        //        if (!user) {
+        //            return false;
+        //        }
+        //        for (var userRoleIndex in user.roles) {
+        //            for (var roleIndex in this.roles) {
+        //                if (this.roles[roleIndex] === user.roles[userRoleIndex]) {
+        //                    return true;
+        //                }
+        //            }
+        //        }
+        //    }
             
-            return false;
-        };
+        //    return false;
+        //};
         
         // An overload function of shouldRender - Used in sidenav
-        var shouldRender = function (user, isOverload) { 
+        var shouldRender = function (user, isOverload) {
             for (var userRoleIndex in user.roles) {
                 for (var roleIndex in this.adminPanelRoles) {
                     if (this.adminPanelRoles[roleIndex] === user.roles[userRoleIndex]) {
@@ -41,7 +41,7 @@ angular.module('core').service('Menus', [
                     }
                 }
             }
-        }
+        };
         
         // Validate menu existance
         this.validateMenuExistance = function (menuId) {
@@ -77,7 +77,7 @@ angular.module('core').service('Menus', [
                 adminPanelRoles : this.adminPanelRoles,
                 items: options.items || [],
                 adminItems : options.items || [],
-                shouldRender: shouldRender
+                shouldRender: shouldRender 
             };
             
             // Return the menu object
